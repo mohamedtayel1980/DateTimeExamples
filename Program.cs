@@ -21,12 +21,14 @@
             Console.WriteLine($"Deadline (10 days from today): {deadline}");
 
             DateTime earlierTime = today.AddHours(-5);  // Subtracting 5 hours
+            DateTime earlierDay = today.AddDays(-10);   // Subtracting 10 days
             Console.WriteLine($"5 Hours Ago: {earlierTime}");
+            Console.WriteLine($"10 days befor: {earlierDay}");
             #endregion
 
             // #region Working with DateOnly
             #region Working with DateOnly
-            DateOnly projectDueDate = new DateOnly(2023, 12, 31);  // December 31, 2023
+            DateOnly projectDueDate = new DateOnly(2025, 12, 31);  // December 31, 2023
             Console.WriteLine($"\nProject Due Date: {projectDueDate}");
 
             DateOnly meetingDate = new DateOnly(2023, 11, 15);
@@ -38,11 +40,14 @@
             // #region Formatting DateTime and DateOnly
             #region Formatting DateTime and DateOnly
             DateTime appointmentDate = new DateTime(2024, 4, 15, 14, 30, 0);  // April 15, 2024 at 2:30 PM
-            Console.WriteLine($"\nAppointment Date (Long Format): {appointmentDate.ToLongDateString()}");
+            Console.WriteLine($"\nAppointment Date (Long Format): {DateTime.Now.ToLongDateString()}");
+            Console.WriteLine($"\nAppointment Date (short  Format): {appointmentDate.ToShortDateString()}");
             Console.WriteLine($"Appointment Time (Short Format): {appointmentDate.ToShortTimeString()}");
+            Console.WriteLine($"Appointment Time (long  Format): {DateTime.Now.ToLongTimeString()}");
 
             DateOnly holiday = new DateOnly(2023, 12, 25);  // Christmas Day 2023
             Console.WriteLine($"Holiday (Formatted): {holiday.ToString("MMMM dd, yyyy")}");
+            Console.WriteLine($"Holiday (Formatted): {DateTime.Now.ToString("dd/MM/yyyy")}");
             #endregion
 
             // #region Working with TimeSpan
